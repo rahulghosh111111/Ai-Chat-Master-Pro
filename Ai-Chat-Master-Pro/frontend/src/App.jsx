@@ -8,8 +8,8 @@ const handleSend = async () => {
     setLoading(true);
 
     // 1. DEFINE THE URL EXPLICITLY
-    const API_URL = "https://ai-chat-master-pro.onrender.com/chat"; // <--- MUST HAVE /chat
-    
+// It MUST end with /chat
+const res = await axios.post("https://ai-chat-master-pro.onrender.com/chat", { message: currentInput });    
     // 2. LOG IT TO CONSOLE (To prove it's correct)
     console.log("Attempting to send to:", API_URL);
 
