@@ -24,8 +24,8 @@ function App() {
     setLoading(true);
 
     try {
-const res = await axios.post("https://ai-chat-master-pro.onrender.com/chat", { message: currentInput });      setMessages(prev => [...prev, { text: res.data.response, sender: "ai" }]);
-    } catch (err) {
+// ✅ Added "/chat" at the end
+const res = await axios.post("https://ai-chat-master-pro.onrender.com", { message: currentInput });    } catch (err) {
       setMessages(prev => [...prev, { text: "Connection failed. Is the backend running?", sender: "ai", isError: true }]);
     } finally {
       setLoading(false);
